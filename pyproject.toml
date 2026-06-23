@@ -34,6 +34,9 @@ dev = [
 [project.scripts]
 prompt-shield = "prompt_shield.cli:main"
 
+[tool.setuptools]
+packages = ["prompt_shield"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-v --tb=short"
