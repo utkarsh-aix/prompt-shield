@@ -1,5 +1,12 @@
 # Prompt Injection Shield
 
+[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](pyproject.toml)
+[![Tests Status](https://img.shields.io/badge/Tests-Passing-success)](tests/)
+[![Coverage](https://img.shields.io/badge/Coverage-97.5%25-brightgreen)](tests/)
+[![Code Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Security Audited](https://img.shields.io/badge/Security-STRIDE%20Audited-success)](THREAT_MODEL.md)
+
 Prompt Shield is an experimental AI security framework designed to detect direct prompt injection attacks using rule-based and intent-based detection techniques. 
 
 It sits between untrusted user inputs and Large Language Models (LLMs), evaluating incoming requests through a multi-stage security pipeline and returning structured enforcement decisions (`ALLOW`, `WARN`, or `BLOCK`) before requests reach the downstream model.
@@ -192,6 +199,18 @@ This runs the full test suite (145 tests) testing the detector, scorer, policy e
 
 ---
 
+## Documentation & Repository Resources
+
+For detailed insights into the project, review the following resources:
+* **Architecture:** Detailed [Phase 1 Architecture](docs/architecture/phase1_architecture.md) and [Phase 1.5 Architecture](docs/architecture/phase1_5_architecture.md) documentation with pipeline diagrams.
+* **Security & Threats:** Comprehensive [Threat Model](THREAT_MODEL.md) (STRIDE-audited) and [Security Assessment](docs/security_assessment.md).
+* **Known Limitations:** Catalog of current constraints in [Known Limitations](docs/known_limitations.md).
+* **Changelog:** Track releases and development history in the [Changelog](CHANGELOG.md).
+* **Contributing:** Local development environment setup and PR instructions in the [Contributing Guidelines](CONTRIBUTING.md).
+* **Security Policy:** Private vulnerability reporting procedures in the [Security Policy](SECURITY.md).
+
+---
+
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

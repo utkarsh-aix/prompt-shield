@@ -59,8 +59,48 @@ User Input
 └──────────────┬────────────────────────┘
                │
                ▼
-          ShieldResult
+           ShieldResult
   + intents: List[str]   ← NEW field
+```
+
+### Pipeline Flow (Mermaid Diagram)
+
+```mermaid
+graph TD
+    User([User Input]) --> ID[Stage 1: InjectionDetector]
+    ID -->|DetectionResult| IND[Stage 2: IntentDetector]
+    IND -->|IntentResult| RS[Stage 3: RiskScorer]
+    RS -->|ScoreResult| PE[Stage 4: PolicyEngine]
+    PE -->|PolicyDecision| SR([ShieldResult])
+
+    subgraph Stage 1: InjectionDetector
+        ID_1[Exact regex pattern matching] --> ID_2[Collect matched patterns]
+    end
+
+    subgraph Stage 2: IntentDetector
+        IND_1[Check ~100 phrase signals] --> IND_2{Categorize intent}
+        IND_2 -->|Signal Match| IND_3[SYSTEM_PROMPT_EXTRACTION]
+        IND_2 -->|Signal Match| IND_4[INSTRUCTION_OVERRIDE]
+        IND_2 -->|Signal Match| IND_5[SAFETY_BYPASS]
+        IND_2 -->|Signal Match| IND_6[ROLE_ESCALATION]
+        IND_3 & IND_4 & IND_5 & IND_6 --> IND_7[Collect matched intents]
+    end
+
+    subgraph Stage 3: RiskScorer
+        RS_1[Sum pattern weights] --> RS_A[Sum matched intent weights]
+        RS_A --> RS_2[Total raw score]
+        RS_2 --> RS_3[Cap total score at 100]
+        RS_3 --> RS_4{Classify Risk Level}
+        RS_4 -->|0-30| RS_S[SAFE]
+        RS_4 -->|31-60| RS_U[SUSPICIOUS]
+        RS_4 -->|61-100| RS_M[MALICIOUS]
+    end
+
+    subgraph Stage 4: PolicyEngine
+        PE_1{Evaluate Risk Level} -->|SAFE| PE_A[ALLOW]
+        PE_1 -->|SUSPICIOUS| PE_W[WARN]
+        PE_1 -->|MALICIOUS| PE_B[BLOCK]
+    end
 ```
 
 ---
