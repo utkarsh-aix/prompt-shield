@@ -1,6 +1,6 @@
 # Prompt Injection Shield
 
-[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue)](pyproject.toml)
 [![Tests Status](https://img.shields.io/badge/Tests-Passing-success)](tests/)
 [![Coverage](https://img.shields.io/badge/Coverage-97.5%25-brightgreen)](tests/)
@@ -213,4 +213,4 @@ For detailed insights into the project, review the following resources:
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
