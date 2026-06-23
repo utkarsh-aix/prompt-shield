@@ -1,0 +1,33 @@
+{
+  "version": "1.0.0",
+  "total": 80,
+  "passed": 78,
+  "failed": 2,
+  "accuracy_pct": 97.5,
+  "by_category": {
+    "Basic Attack": {
+      "total": 20,
+      "passed": 19,
+      "failed": 1,
+      "accuracy_pct": 95.0
+    },
+    "Variations": {
+      "total": 20,
+      "passed": 19,
+      "failed": 1,
+      "accuracy_pct": 95.0
+    },
+    "Obfuscation": {
+      "total": 20,
+      "passed": 20,
+      "failed": 0,
+      "accuracy_pct": 100.0
+    },
+    "False Positive": {
+      "total": 20,
+      "passed": 20,
+      "failed": 0,
+      "accuracy_pct": 100.0
+    }
+  }
+}

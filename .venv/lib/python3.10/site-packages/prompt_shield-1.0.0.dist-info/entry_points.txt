@@ -1,0 +1,2 @@
+[console_scripts]
+prompt-shield = prompt_shield.cli:main
