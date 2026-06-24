@@ -14,6 +14,10 @@ from prompt_shield.scorer import RiskScorer, ScoreResult
 from prompt_shield.policy import PolicyEngine, PolicyDecision
 from prompt_shield import config
 
+# Phase 2 — Document Scanner
+from prompt_shield.document_types import DocumentThreat, DocumentScanResult
+from prompt_shield.document_scanner import DocumentScanner
+
 __all__ = [
     "PromptShield",
     "ShieldResult",
@@ -24,6 +28,10 @@ __all__ = [
     "PolicyEngine",
     "PolicyDecision",
     "config",
+    # Phase 2 — Document Scanner
+    "DocumentScanner",
+    "DocumentThreat",
+    "DocumentScanResult",
 ]
 
 __version__ = config.VERSION
