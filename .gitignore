@@ -54,5 +54,5 @@ htmlcov/
 .DS_Store
 
 # Benchmark execution output files
-results/benchmark_results.xlsx
-results/benchmark_summary.json
+results/
+
