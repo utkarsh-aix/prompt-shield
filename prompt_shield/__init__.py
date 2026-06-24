@@ -17,6 +17,9 @@ from prompt_shield import config
 # Phase 2 — Document Scanner
 from prompt_shield.document_types import DocumentThreat, DocumentScanResult
 from prompt_shield.document_scanner import DocumentScanner
+from prompt_shield.chunk_scanner import ChunkScanner, ChunkScanResult
+from prompt_shield.context_validator import ContextValidator, ContextValidationResult
+from prompt_shield.rag_guard import RAGGuard, RAGGuardResult
 
 __all__ = [
     "PromptShield",
@@ -32,6 +35,15 @@ __all__ = [
     "DocumentScanner",
     "DocumentThreat",
     "DocumentScanResult",
+    # Phase 2.3 — Chunk Scanner
+    "ChunkScanner",
+    "ChunkScanResult",
+    # Phase 2.4 — Context Validator
+    "ContextValidator",
+    "ContextValidationResult",
+    # Phase 2.5 — RAG Guard
+    "RAGGuard",
+    "RAGGuardResult",
 ]
 
 __version__ = config.VERSION
